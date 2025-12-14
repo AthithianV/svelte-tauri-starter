@@ -1,11 +1,10 @@
 <script lang="ts">
-    import { onMount } from "svelte";
     import { getCurrentWindow } from "@tauri-apps/api/window";
-    import Close from "$lib/components/icons/Close.svelte";
-    import Minimize from "$lib/components/icons/Minimize.svelte";
-    import RestoreDown from "$lib/components/icons/RestoreDown.svelte";
-    import RestoreUp from "$lib/components/icons/RestoreUp.svelte";
-    import { Button } from "$lib/components/ui/button/index.js";
+    import Close from "$lib/shared/components/icons/Close.svelte";
+    import Minimize from "$lib/shared/components/icons/Minimize.svelte";
+    import RestoreDown from "$lib/shared/components/icons/RestoreDown.svelte";
+    import RestoreUp from "$lib/shared/components/icons/RestoreUp.svelte";
+    import { Button } from "$lib/shared/components/ui/button/index.js";
 
     let isMaximized = $state(false);
     $effect(() => {
@@ -49,7 +48,7 @@
     };
 </script>
 
-<div class="w-full h-(--titlebar-height) flex justify-between items-center bg-sidebar border-b">
+<div class="w-full h-(--titlebar-height) flex justify-between items-center bg-sidebar">
     <div
         role="button"
         tabindex="0"
